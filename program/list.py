@@ -3,6 +3,9 @@
 
 
 def list_bottom_up(a):
+    """
+    Поиск длины НВП.
+    """
     d = []
     for i, _ in enumerate(a):
         d.append(1)
@@ -15,7 +18,17 @@ def list_bottom_up(a):
 
 
 def list_bottom_up2(a):
+    """
+    Поиск длины и самой НВП.
+
+    Сама НВП ищется двумя способами:
+    с помощью дополнительного списка prev;
+    без помощи дополнительного списка.
+    """
     def restore_using_prev(m_index):
+        """
+        Восстановление НВП с помощью списка prev
+        """
         l = []
         while True:
             l.append(m_index)
@@ -27,6 +40,9 @@ def list_bottom_up2(a):
         return l
 
     def restore_without_prev(ans, m_index):
+        """
+        Восстановление НВП без помощи списка prev
+        """
         l = []
         while True:
             l.append(m_index)
